@@ -1,6 +1,6 @@
 import hashlib
 
 str = input()
-result = hashlib.sha256(str.encode())
+array = hashlib.sha256(str.encode())
 
-print(result.hexdigest())
+print(array.hexdigest())

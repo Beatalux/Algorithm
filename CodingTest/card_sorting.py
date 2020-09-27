@@ -1,23 +1,21 @@
+import heapq
+
 n = int(input())
 arr = []
 
+#값 입력받기
+for i in range(n):
+    heapq.heappush(arr,int(input()))
+sum=0
 
-for i in range(n+1):
-    num = int(input())
-    #print((num))
-    if num > 0:
-        arr.append(num)
-        #print(arr)
+while True:
+    try:
+        n1=heapq.heappop(arr)
+        n2=heapq.heappop(arr)
+        heapq.heappush(arr, n1+n2)
+        sum+=n1+n2
+    except:
+        break
 
-    else:
-        try:
-            m = arr[0]
-            for j in range(len(arr)):
+print(sum)
 
-                m = min(m, arr[j])
-            #print(m)
-
-            arr.remove(m)
-            print(m)
-        except:
-            print('0')
